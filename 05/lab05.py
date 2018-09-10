@@ -8,8 +8,8 @@ for i in range(0, n):
 h = 0
 e = 0
 for i in range(0,n):
-    if not lines[i].isalpha():
-        if lines[i][0] == '#':
+    if not (lines[i].isalpha() or lines[i].isdigit()) :
+        if lines[i][0] == '#' and lines[i][1:].isalpha():
             h+=1
         elif not (lines[i][1:].isdigit() and lines[i][0] in ("-","+")):
             e+=1
@@ -29,6 +29,6 @@ if h > 0:
 
 if e > 0:
     if e == 1:
-        print("1 emoticon foi removida.")
+        print("1 emoticon foi removido.")
     else:
-        print(e, "emoticons foram removidas.")
+        print(e, "emoticons foram removidos.")
